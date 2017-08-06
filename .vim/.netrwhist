@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/kominam/Desktop/Workspaces/Rails/fcsp/app/views'
+let g:netrw_dirhist_2='/home/kominam/Desktop/Workspaces/Rails/fcsp/app/views/layouts'
+let g:netrw_dirhist_3='/home/kominam/Desktop/Workspaces/Rails/fcsp/app/views'
+let g:netrw_dirhist_4='/home/kominam/Desktop/Workspaces/Rails/fcsp/app/views/pages'
+let g:netrw_dirhist_5='/home/kominam/Desktop/Workspaces/Rails/fcsp/app/views'
