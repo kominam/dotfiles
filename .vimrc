@@ -6,13 +6,21 @@ augroup HighlightTrailingSpaces
 	autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
 
+" turn on syntax highlighting
 syntax on
+
+" make vim try to detect file types and load plugins for them
 filetype on
 filetype plugin indent on
 
+" reload files changed outside vim
 set autoread
-set incsearch
-set hlsearch
+
+" search settings
+set incsearch        " find the next match as we type the search
+set hlsearch         " hilight searches by default
+
+" indentation
 set autoindent
 set ruler
 set number
@@ -22,23 +30,7 @@ set shiftwidth=2
 set expandtab
 set smarttab
 " ---------------------- PLUGIN CONFIGURATION ----------------------
-let &runtimepath.=',$HOME/.vim/bundle/Vundle.vim'
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-
-" -- Web Development
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Shutnik/jshint2.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mattn/emmet-vim'
-Plugin 'skammer/vim-css-color'
-call vundle#end()
-
-" run JSHint when a file with .js extension is saved
-autocmd BufWritePost *.js silent :JSHint
+source ~/.vim/vimrcs/vundle.vim
 
 set background=dark
 colorscheme solarized
