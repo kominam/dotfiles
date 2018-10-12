@@ -22,6 +22,7 @@ set hlsearch         " hilight searches by default
 
 " indentation
 set autoindent
+set smartindent
 set ruler
 set number
 set tabstop=2
@@ -29,6 +30,8 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
+
+set noswapfile
 " ---------------------- PLUGIN CONFIGURATION ----------------------
 source ~/.vim/vimrcs/vundle.vim
 
