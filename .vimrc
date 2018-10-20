@@ -41,6 +41,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" enable omni completion
+set omnifunc=syntaxcomplete#Complete
+
 " ---------------------- PLUGIN CONFIGURATION ----------------------
 source ~/.vim/vimrcs/vundle.vim
 
