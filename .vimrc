@@ -44,8 +44,32 @@ map <C-l> <C-W>l
 " enable omni completion
 set omnifunc=syntaxcomplete#Complete
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" auto complete parenthesis
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                  Custom functions                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! TrailingWhitespace()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunction
+
+autocmd BufWrite *.* :call TrailingWhitespace()
+
 " ---------------------- PLUGIN CONFIGURATION ----------------------
-source ~/.vim/vimrcs/vundle.vim
+source ~/.vim/vundle.vim
 
 set background=dark
 colorscheme solarized
