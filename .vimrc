@@ -35,16 +35,17 @@ set smarttab
 
 set noswapfile
 
+set wrap " wrap long lines
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" enable omni completion
-set omnifunc=syntaxcomplete#Complete
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildmenu
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignorecase
 
 " auto complete parenthesis
 inoremap {      {}<Left>
@@ -56,6 +57,13 @@ inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
+
+let mapleader=" "
+
+nnoremap <leader>s :w<CR>
+
+" FZF
+nnoremap <leader>p :GFiles<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                  Custom functions                                "
@@ -69,7 +77,7 @@ endfunction
 autocmd BufWrite *.* :call TrailingWhitespace()
 
 " ---------------------- PLUGIN CONFIGURATION ----------------------
-source ~/.vim/vundle.vim
+source ~/.vim/plugins.vim
 
 set background=dark
 colorscheme solarized

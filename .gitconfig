@@ -1,0 +1,37 @@
+[alias]
+  # View status using short format
+  s = status -s
+
+  # commit with reuse message
+  amend = commit --amend --no-edit
+
+  # View abbreviated SHA, description, and history graph of the latest 20 commits
+  logs = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+  # Find commits by source code
+  fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
+  # Find commits by commit message
+  fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+  # Show verbose output about branches, remotes
+  branches = branch -a
+  remotes = remote -v
+[color]
+	ui = auto
+[color "branch"]
+  current = blue reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold # line info
+  old = red # deletions
+  new = green # # additions
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+  editor = vi
+  autocrlf = input
