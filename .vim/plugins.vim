@@ -8,4 +8,8 @@ Plug 'mattn/emmet-vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'mg979/vim-visual-multi'
 call plug#end()
