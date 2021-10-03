@@ -33,5 +33,5 @@
   changed = green
   untracked = cyan
 [core]
-  editor = vi
+  editor = vim
   autocrlf = input

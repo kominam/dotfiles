@@ -13,6 +13,8 @@ Plug 'preservim/nerdtree'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kaicataldo/material.vim'
 Plug 'ryanoasis/vim-devicons'
+" colorscheme
+Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 call plug#end()

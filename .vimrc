@@ -77,7 +77,7 @@ let g:ale_set_quickfix = 1
 set laststatus=2
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'material_vim',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ ['mode'], ['filename'] ],
       \   'right': [ ['gitbranch'], ['lineinfo'], ['alestatus'] ]
@@ -229,4 +229,9 @@ autocmd BufWrite *.* :call TrailingWhitespace()
 source ~/.config/nvim/plugins.vim
 
 " set background=dark
-colorscheme material
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
+colorscheme onedark
