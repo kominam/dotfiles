@@ -14,6 +14,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
+Plug 'Yggdroot/indentLine'
 " colorscheme
 Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'

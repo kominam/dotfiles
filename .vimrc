@@ -55,6 +55,11 @@ map <C-l> <C-W>l
 let mapleader=" "
 nnoremap <leader>s :w<CR>
 
+" Tab
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>tc :tabclose<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            ALE                                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,13 +110,16 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeStatusline = '%#NonText#'
 
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 " Auto pair
 let g:endwise_no_mappings = 1
 let g:AutoPairsMultilineClose = 0
 let vim_markdown_preview_github=1
 let g:move_key_modifier = 'C'
+
+" IndentLine
+let g:indentLine_char = '|'
+let g:indentLine_color_gui = '#363244'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             Coc.vim                              "
