@@ -41,7 +41,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm rails docker)
+plugins=(git npm ruby rails docker yarn node npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,6 +53,9 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 export EDITOR='vim'
+
+alias vim='nvim'
+alias vi='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -68,4 +71,3 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-eval `dircolors ~/.solarized/dircolors.ansi-dark`
