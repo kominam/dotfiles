@@ -23,6 +23,7 @@ mkdir -p $HOME/.config/nvim/
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sudo ln -sf $(pwd)/.vimrc $HOME/.vimrc
+sudo ln -sf $(pwd)/.vim/plugins.vim $HOME/.config/nvim/plugins.vim
 sudo ln -sf $(pwd)/.vimrc $HOME/.config/nvim/init.vim
 
 # Install Ripgrep (rg)
