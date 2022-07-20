@@ -110,6 +110,7 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeStatusline = '%#NonText#'
 
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-g> :NERDTreeFind<CR>
 
 " Auto pair
 let g:endwise_no_mappings = 1
@@ -225,7 +226,7 @@ function! LinterStatus() abort
 endfunction
 
 function! GitBranchInfo()
-  let branch = fugitive#head()
+  let branch = FugitiveHead()
   return branch !=# '' ? " ".branch : ""
 endfunction
 
