@@ -1,0 +1,17 @@
+font-size = 12
+
+theme = tokyonight_moon
+
+link-url = true
+
+# Window settings
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+keybind = cmd+shift+up=resize_split:up,10
+keybind = cmd+shift+down=resize_split:down,10
+keybind = cmd+shift+left=resize_split:left,10
+keybind = cmd+shift+right=resize_split:right,10
+
+keybind = cmd+shift+r=reload_config

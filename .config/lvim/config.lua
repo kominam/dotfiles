@@ -1,19 +1,6 @@
---[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
--- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 lvim.colorscheme = "onedark"
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -69,8 +56,13 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.cmp.sources = {
+  { name = "copilot" },
+  { name = "nvim_lsp" },
+  { name = "buffer" },
+  { name = "path" },
+}
 
--- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
@@ -83,6 +75,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   "yaml",
   "ruby",
+  "go",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -167,33 +160,19 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.plugins = {
   {
     "navarasu/onedark.nvim",
-    "Exafunction/codeium.vim"
-    -- {
-    --   "zbirenbaum/copilot-cmp",
-    --   event = "InsertEnter",
-    --   dependencies = { "zbirenbaum/copilot.lua" },
-    --   config = function()
-    --     vim.defer_fn(function()
-    --       require("copilot").setup()
-    --       require("copilot_cmp").setup()
-    --     end, 100)
-    --   end,
-    -- },
-    -- {
-    --   "github/copilot.vim",
-    --   config = function()
-    --     vim.g.copilot_no_tab_map = true
-    --     vim.g.copilot_proxy = "http://copilot-proxy:Mp7iawJuV264SxcjpQVJ@copilot-proxy.sun-asterisk.ai:8080"
-    --     vim.g.copilot_proxy_strict_ssl = false
-    --     vim.api.nvim_set_keymap("i", "<C-g>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true, replace_keycodes = false })
-    --   end
-    -- },
+    {
+      "zbirenbaum/copilot-cmp",
+      event = "InsertEnter",
+      dependencies = { "zbirenbaum/copilot.lua" },
+      config = function()
+        vim.defer_fn(function()
+          require("copilot").setup()
+          require("copilot_cmp").setup()
+        end, 100)
+      end,
+    },
   },
 }
-
--- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
--- table.insert(lvim.builtin.cmp.sources, { name = "copilot", group_index = 2 })
--- table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 vim.api.nvim_create_autocmd('BufWritePre', { pattern = '*', command = [[:%s/\s\+$//e]] })
