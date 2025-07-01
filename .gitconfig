@@ -17,8 +17,14 @@
   # Show verbose output about branches, remotes
   branches = branch -a
   remotes = remote -v
+
+  # diff with bat
+  bdiff = "!git diff --name-only --relative --diff-filter=d | xargs bat --diff"
+
+  pshc = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  plc = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
 [color]
-	ui = auto
+  ui = auto
 [color "branch"]
   current = blue reverse
   local = yellow

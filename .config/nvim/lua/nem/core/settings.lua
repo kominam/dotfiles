@@ -1,6 +1,6 @@
 local default = {
   backup = false,
-  -- clipboard = "unnamedplus",
+  clipboard = "unnamedplus",
   cmdheight = 1,
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8",
@@ -28,10 +28,9 @@ local default = {
   previewheight = 5,
   wildignore = { "*/tmp/*", "*/node_modules/*", "*.so", "*.swp", "*.zip" }
 }
-vim.opt.shortmess:append "c"
+-- vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append "<,>,[,],h,l"
 
--- Auto cmd
 vim.api.nvim_create_autocmd('BufWritePre', { pattern = '*', command = [[:%s/\s\+$//e]] })
 
 for k, v in pairs(default) do
