@@ -1,3 +1,5 @@
+local finder = require("nem.plugins.telescope.finder")
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
@@ -32,11 +34,12 @@ return {
         },
         file_ignore_patterns = {
           ".DS_Store",
-        }
+        },
       },
       pickers = {
         find_files = {
           hidden = true,
+          theme = "dropdown",
         },
         live_grep = {
           only_sort_text = true,
@@ -58,17 +61,24 @@ return {
         git_files = {
           hidden = true,
           show_untracked = true,
+          theme = "dropdown",
         },
       },
     })
 
     telescope.load_extension("fzf")
 
-    keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Fuzzy find files in git repository" })
+    keymap.set("n", "<leader>f", function() finder.project_files() end, { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files" })
     keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+
     keymap.set("n", "<leader>st", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>sc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+
+    keymap.set("n", "<leader>cf", function()
+      finder.find_config()
+    end, { desc = "Find configuration files", silent = true })
+
     keymap.set("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 
     -- buffer management

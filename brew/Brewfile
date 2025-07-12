@@ -1,0 +1,24 @@
+cask "discord"
+cask "ghostty"
+cask "google-chrome"
+cask "slack"
+cask "visual-studio-code"
+
+brew "libyaml"
+brew "openssl"
+
+brew "bat"
+brew "fd"
+brew "fzf"
+brew "neovim"
+brew "ripgrep"
+brew "tmux"
+brew "zsh"
+
+brew "colima"
+brew "docker"
+brew "docker-compose"
+brew "qemu"
+
+brew "node"
+brew "nvm"
