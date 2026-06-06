@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("n", "<leader>s", ":w<CR>", { desc = "Save current buffer" })
+keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save current buffer" })
 keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit current buffer" })
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
