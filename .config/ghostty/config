@@ -5,6 +5,8 @@ theme = tokyonight_moon
 link-url = true
 
 # Window settings
+window-decoration = none
+
 keybind = alt+h=goto_split:left
 keybind = alt+j=goto_split:down
 keybind = alt+k=goto_split:up

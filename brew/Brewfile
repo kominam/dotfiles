@@ -4,9 +4,6 @@ cask "google-chrome"
 cask "slack"
 cask "visual-studio-code"
 
-brew "libyaml"
-brew "openssl"
-
 brew "bat"
 brew "fd"
 brew "fzf"
@@ -14,11 +11,14 @@ brew "neovim"
 brew "ripgrep"
 brew "tmux"
 brew "zsh"
+brew "jq"
+brew "mise"
+
+brew "gh"
+brew "lazygit"
+brew "gemini-cli"
 
 brew "colima"
 brew "docker"
 brew "docker-compose"
 brew "qemu"
-
-brew "node"
-brew "nvm"
