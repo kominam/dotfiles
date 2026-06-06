@@ -19,6 +19,7 @@ local default = {
   tabstop = 2,
   cursorline = true,
   number = true,
+  relativenumber = true,
   signcolumn = "yes",
   scrolloff = 8,
   sidescrolloff = 8,
